@@ -13,9 +13,9 @@ int main() {
         // parent
         if (f2) {
             int status;
-            wait(&status);
+            int pid_status = wait(&status);
             int return_val = WEXITSTATUS(status);
-            printf("Completed Child PID: %d\tAsleep for %d seconds\n", status, return_val);
+            printf("Completed Child PID: %d\tAsleep for %d seconds\n", pid_status, return_val);
             printf("Parent Completed \n");
             exit(0);
         }
